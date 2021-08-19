@@ -21,14 +21,14 @@ namespace Dummy.App
             if (int.TryParse(periodEnvironmentVariable, out var period))
             {
                 var counter = 0;
-                
-                while (counter <= period)
+
+                do
                 {
                     counter++;
                     Thread.Sleep(1000);
-                    
+
                     Console.WriteLine($"{DateTime.Now:g} Counter: {counter} Period: {period}");
-                }
+                } while (counter < period);
             }
             else
             {
